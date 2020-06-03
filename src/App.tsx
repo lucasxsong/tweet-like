@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import CityDropdown from './citydropdown';
+import Tweeta from './tweeta';
 
 interface Props {}
 
@@ -16,8 +17,10 @@ class App extends React.Component<Props, State> {
 		super(props);
 		this.state = {
 			city: '',
-			showTweets: false,
-			cityfile: '',
+            showTweets: true,
+            // showTweets: false,
+            // cityfile:"",
+			cityfile: 'sanfrancisco',
 		};
 	}
 
@@ -26,25 +29,33 @@ class App extends React.Component<Props, State> {
 	};
 
 	showTweets = () => {
-		const fullcity = this.state.city.split(", ");
-		const cityfile = fullcity[0].toLowerCase().replace(/ /g,'');
+		const fullcity = this.state.city.split(', ');
+		const cityfile = fullcity[0].toLowerCase().replace(/ /g, '');
 		this.setState({ cityfile: cityfile });
-		this.setState({ showTweets: true });
-		console.log(cityfile);
+		if (cityfile != '') this.setState({ showTweets: true });
 	};
 
 	render() {
-		return (
-			<div className="App">
-				<h1>
-					Tweet like I'm from {this.state.city ? this.state.city : '...'}
-				</h1>
-				<button onClick={this.showTweets}> GO </button>
-				<div className="selection">
-					<CityDropdown onSelection={this.handleSelection} />
+		if (!this.state.showTweets) {
+			return (
+				<div className="App">
+					<h1>
+						Tweet like I'm from {this.state.city ? this.state.city : '...'}
+					</h1>
+					<button onClick={this.showTweets}> GO </button>
+					<div className="selection">
+						<CityDropdown onSelection={this.handleSelection} />
+					</div>
 				</div>
-			</div>
-		);
+			);
+		} else {
+			return (
+				<>
+                    {/* <div className="App">Tweeta</div> */}
+                    <Tweeta city={this.state.cityfile}/>
+				</>
+			);
+		}
 	}
 }
 

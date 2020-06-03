@@ -1,7 +1,7 @@
 // import React from 'react';
 import * as React from 'react';
 import { Dropdown } from 'semantic-ui-react';
-import cities from './data/dropdowncities.json';
+import cities from './dropdowncities.json';
 
 export interface Props {
     onSelection: any;
