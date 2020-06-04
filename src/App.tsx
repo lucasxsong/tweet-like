@@ -17,10 +17,10 @@ class App extends React.Component<Props, State> {
 		super(props);
 		this.state = {
 			city: '',
-            showTweets: true,
-            // showTweets: false,
-            // cityfile:"",
-			cityfile: 'sanfrancisco',
+            // showTweets: true,
+            showTweets: false,
+            cityfile:"",
+			// cityfile: 'sanfrancisco',
 		};
 	}
 
