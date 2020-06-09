@@ -19,7 +19,7 @@ class App extends React.Component<Props, State> {
                 showTweets: true,
                 // showTweets: false,
                 // cityfile:"",
-                cityfile: 'adelanto',
+                cityfile: 'fremont',
             };
 	}
 

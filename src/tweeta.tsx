@@ -49,7 +49,7 @@ class Tweeta extends React.Component<Props, State> {
 		for (let b in bigrams) {
 			first = b.split(' ')[0];
 
-			if (first === word && this.state.tbigrams[b] > 0) {
+			if (first === word && bigrams[b] > 0) {
 				newword = b.split(' ')[1];
 				if (sentlength > length - 10 && newword === 'endsent') {
 					return '';
@@ -89,16 +89,12 @@ class Tweeta extends React.Component<Props, State> {
 		fetch(filename)
 			.then((r: any) => r.json())
 			.then((text: any) => {
-				this.setState({ tbigrams: text }, () => {
-					console.log(this.state);
-				});
+				this.setState({ tbigrams: text });
 			});
 		fetch(filename2)
 			.then((r: any) => r.json())
 			.then((text: any) => {
-				this.setState({ bbigrams: text, isLoaded: true }, () => {
-					console.log(this.state);
-				});
+				this.setState({ bbigrams: text, isLoaded: true });
 			});
 	}
 
@@ -113,7 +109,7 @@ class Tweeta extends React.Component<Props, State> {
 			console.dir(tweets);
 			return (
 				<div className="App">
-					{bio} <br />
+					{bio} <br /><br />
 					{tweets.map((data) => {
 						return <div> {data} </div>;
 					})}
