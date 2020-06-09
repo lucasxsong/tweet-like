@@ -102,7 +102,7 @@ class Tweeta extends React.Component<Props, State> {
 		if (this.state.isLoaded) {
 			let tweets = [];
 			let bio = this.wordgen(280, this.state.bbigrams);
-			for (let i: number = 0; i < 10; i++) {
+			for (let i: number = 0; i < 20; i++) {
 				let t = this.wordgen(140, this.state.tbigrams);
 				tweets.push(t);
 			}
@@ -111,7 +111,7 @@ class Tweeta extends React.Component<Props, State> {
 				<div className="App">
 					{bio} <br /><br />
 					{tweets.map((data) => {
-						return <div> {data} </div>;
+						return <div> {data} <br/></div>;
 					})}
 				</div>
 			);
