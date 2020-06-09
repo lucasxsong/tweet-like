@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import CityDropdown from './citydropdown';
 import Tweeta from './tweeta';
@@ -15,13 +14,13 @@ interface State {
 class App extends React.Component<Props, State> {
 	constructor(props: Props) {
 		super(props);
-		this.state = {
-			city: '',
-            showTweets: true,
-            // showTweets: false,
-            // cityfile:"",
-			cityfile: 'sanfrancisco',
-		};
+            this.state = {
+                city: '',
+                showTweets: true,
+                // showTweets: false,
+                // cityfile:"",
+                cityfile: 'sanfrancisco',
+            };
 	}
 
 	handleSelection = (city: string) => {
@@ -32,7 +31,7 @@ class App extends React.Component<Props, State> {
 		const fullcity = this.state.city.split(', ');
 		const cityfile = fullcity[0].toLowerCase().replace(/ /g, '');
 		this.setState({ cityfile: cityfile });
-		if (cityfile != '') this.setState({ showTweets: true });
+		if (cityfile !== '') this.setState({ showTweets: true });
 	};
 
 	render() {
