@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/tweetlike/static/css/main.94a8440f.chunk.css",
+    "main.js": "/tweetlike/static/js/main.d903160c.chunk.js",
+    "main.js.map": "/tweetlike/static/js/main.d903160c.chunk.js.map",
+    "runtime-main.js": "/tweetlike/static/js/runtime-main.f88e21d3.js",
+    "runtime-main.js.map": "/tweetlike/static/js/runtime-main.f88e21d3.js.map",
+    "static/css/2.f18acbd5.chunk.css": "/tweetlike/static/css/2.f18acbd5.chunk.css",
+    "static/js/2.eb7e1061.chunk.js": "/tweetlike/static/js/2.eb7e1061.chunk.js",
+    "static/js/2.eb7e1061.chunk.js.map": "/tweetlike/static/js/2.eb7e1061.chunk.js.map",
+    "index.html": "/tweetlike/index.html",
+    "precache-manifest.5d597e70b1c10a1331276d1ac20ca465.js": "/tweetlike/precache-manifest.5d597e70b1c10a1331276d1ac20ca465.js",
+    "service-worker.js": "/tweetlike/service-worker.js",
+    "static/css/2.f18acbd5.chunk.css.map": "/tweetlike/static/css/2.f18acbd5.chunk.css.map",
+    "static/css/main.94a8440f.chunk.css.map": "/tweetlike/static/css/main.94a8440f.chunk.css.map",
+    "static/js/2.eb7e1061.chunk.js.LICENSE.txt": "/tweetlike/static/js/2.eb7e1061.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/tweetlike/static/media/outline-icons.ef60a4f6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f88e21d3.js",
+    "static/css/2.f18acbd5.chunk.css",
+    "static/js/2.eb7e1061.chunk.js",
+    "static/css/main.94a8440f.chunk.css",
+    "static/js/main.d903160c.chunk.js"
+  ]
+}
