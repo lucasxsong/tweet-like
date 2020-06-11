@@ -2,7 +2,7 @@
   "name": "tlapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://lucasxsong.com/tl-app/",
+  "homepage": "http://lucasxsong.com/tweet-like/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
