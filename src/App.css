@@ -1,38 +1,86 @@
+body {
+    font-family: 'Helvetica Neue' !important;
+}
+
 .App {
-  text-align: center;
+    background-color: rgb(11, 32, 49);
+	min-width: 100vw;
+    min-height: 100vh;
+    font-family: 'Helvetica Neue';
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+	height: 20vmin;
+	pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.desc {
+    margin: 10px;
+    max-width: 250px;
+    color: #486983b4;
 }
 
-.App-link {
-  color: #61dafb;
+.desc:hover {
+    color: #699bc2b4;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-header {
+	font-size: 25px;
+	padding-bottom: 25px;
+    color: #38a1f3;
+    
+	font-weight: 800;
+}
+
+.search-card {
+	padding: 45px 75px 45px 75px;
+	background-color: rgb(20, 54, 80);
+	border-radius: 15px;
+}
+
+.results-card {
+    margin-top: 40px;
+	padding: 45px 75px 45px 75px;
+	background-color: rgb(20, 54, 80);
+	border-radius: 15px 15px 0px 0px;
+}
+
+.results-card {
+	background-color: rgb(20, 54, 80) !important;
+	color: rgb(0, 0, 0) !important;
+}
+
+.results-card:hover {
+	box-shadow: 2px 0px 32px rgba(7, 19, 29, 0.582);
+}
+
+.results-text {
+	color: rgb(182, 182, 182) !important;
+}
+
+.search-card:hover {
+	box-shadow: 2px 0px 32px rgba(7, 19, 29, 0.582);
+}
+
+.twit {
+    margin-right: 5px !important;
+}
+
+.bio {
+    font-size: 16px;
+    color: rgb(182, 182, 182);
+    width: 50vw;
+
+}
+.selection {
+    margin-bottom: 15px;
 }

@@ -1,14 +1,19 @@
 import * as React from 'react';
 import './App.css';
+import { Placeholder, Icon, Button, Feed } from 'semantic-ui-react';
+import TweetCard from './tweetCard';
+import { TransitionGroup, CSSTransition } from 'react-transition-group'; // ES6
 
 interface Props {
 	city: string;
+	cityname: string;
+	handleExit: any;
 }
 interface State {
 	tbigrams: any;
 	bbigrams: any;
-	tweet: string;
-	tweets: string[];
+	tweets: any[];
+	bio: string;
 	isLoaded: boolean;
 }
 class Tweeta extends React.Component<Props, State> {
@@ -18,8 +23,8 @@ class Tweeta extends React.Component<Props, State> {
 			bbigrams: null,
 			tbigrams: null,
 			isLoaded: false,
-			tweet: '',
 			tweets: [],
+			bio: '',
 		};
 		this.componentDidMount = this.componentDidMount.bind(this);
 	}
@@ -91,31 +96,122 @@ class Tweeta extends React.Component<Props, State> {
 			.then((text: any) => {
 				this.setState({ tbigrams: text });
 			});
+
 		fetch(filename2)
 			.then((r: any) => r.json())
 			.then((text: any) => {
-				this.setState({ bbigrams: text, isLoaded: true });
+				this.setState({ bbigrams: text });
 			});
+
+		this.setState({ isLoaded: true });
 	}
 
 	render() {
+		// const { bio, tweets } = this.state;
+
 		if (this.state.isLoaded) {
-			let tweets = [];
-			let bio = this.wordgen(280, this.state.bbigrams);
-			for (let i: number = 0; i < 20; i++) {
+			let tweets: string[] = [];
+
+			for (let i: number = 0; i < 10; i++) {
 				let t = this.wordgen(140, this.state.tbigrams);
 				tweets.push(t);
 			}
-			console.dir(tweets);
+			let bio = this.wordgen(280, this.state.bbigrams);
+
 			return (
 				<div className="App">
-					{bio} <br /><br />
-					{tweets.map((data) => {
-						return <div> {data} <br/></div>;
-					})}
+					<div className="search-container results">
+						<div className="results-card">
+							<div className="search-header">
+								<Icon name="twitter" size="big" className="twit" />
+								tweetlike
+							</div>
+                            <div className="bio">{bio}</div>
+							<Feed
+								style={{
+									margin: '10px',
+									maxWidth: '70vw',
+									backgroundColor: '#e1e8ed',
+									padding: '30px',
+									borderRadius: '5px',
+								}}
+							>
+								{/* <TransitionGroup> */}
+								{tweets.map((e) => {
+									return (
+										// <CSSTransition
+										// 	id={id}
+										// 	timeout={200}
+										// 	classNames="tweet"
+										// >
+										<TweetCard
+											username="tweetlike"
+											text={e}
+											location={this.props.cityname}
+										/>
+										// </CSSTransition>
+									);
+								})}
+								{/* </TransitionGroup> */}
+							</Feed>
+							<Button onClick={this.props.handleExit} icon="redo" />
+						</div>
+					</div>
 				</div>
 			);
-		} else return <> loading </>;
+		} else
+			return (
+				<div className="App">
+					<div className="search-container results">
+						<div className="search-card">
+							<div className="search-header">
+								<Icon name="twitter" size="big" className="twit" />
+							</div>
+							<div
+								style={{
+									backgroundColor: 'white',
+									padding: '30px',
+									margin: '10px',
+									borderRadius: '5px',
+								}}
+							>
+								<Placeholder
+									fluid
+									style={{
+										color: '#e1e8ed',
+										minHeight: '250px',
+										borderRadius: '5px',
+										margin: '10px',
+										minWidth: '40vw',
+									}}
+								>
+									<Placeholder.Header image>
+										<Placeholder.Line length="full" />
+										<Placeholder.Line length="full" />
+									</Placeholder.Header>
+									<Placeholder.Header length="full" image>
+										<Placeholder.Line length="full" />
+										<Placeholder.Line length="full" />
+									</Placeholder.Header>
+									<Placeholder.Header length="full" image>
+										<Placeholder.Line length="full" />
+										<Placeholder.Line length="full" />
+									</Placeholder.Header>
+									<Placeholder.Header length="full" image>
+										<Placeholder.Line length="full" />
+										<Placeholder.Line length="full" />
+									</Placeholder.Header>
+									<Placeholder.Header length="full" image>
+										<Placeholder.Line length="full" />
+										<Placeholder.Line />
+									</Placeholder.Header>
+								</Placeholder>
+							</div>
+							<Button onClick={this.props.handleExit} icon="redo" />
+						</div>
+					</div>
+				</div>
+			);
 	}
 }
 

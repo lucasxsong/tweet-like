@@ -4,31 +4,39 @@ import { Dropdown } from 'semantic-ui-react';
 import cities from './dropdowncities.json';
 
 export interface Props {
-    onSelection: any;
+	onSelection: any;
 }
 
-export interface State {
-}
+export interface State {}
 
 class CityDropdown extends React.Component<Props, State> {
 	constructor(props: Props) {
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
+		super(props);
+		this.handleChange = this.handleChange.bind(this);
 	}
 
-	handleChange(event: any, data:any){
-        this.props.onSelection(data.value)
-    };
+	handleChange(event: any, data: any) {
+		this.props.onSelection(data.value);
+	}
 
 	render() {
 		return (
 			<Dropdown
-				placeholder="Select City"
-				fluid
-				search
-				selection
+				button
+				className="icon"
+				floating
+				labeled
+				icon="point"
 				options={cities}
-				onChange={this.handleChange}
+				search
+                placeholder=""
+                onChange={this.handleChange}
+				style={{
+					fontSize: '18px',
+					marginLeft: '10px',
+					backgroundColor: '#486983b4',
+					color: '#e1e8ed',
+				}}
 			/>
 		);
 	}
