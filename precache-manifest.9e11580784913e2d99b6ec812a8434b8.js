@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "453b82daa91e0ad0a3a5c93c55fb707b",
+    "revision": "2746286e0d28448bb002f4a698cfa939",
     "url": "/tweet-like/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tweet-like/static/css/2.91405f8f.chunk.css"
   },
   {
-    "revision": "e88dfe7ea30b4ee34104",
+    "revision": "52df975f3380b288ad8b",
     "url": "/tweet-like/static/css/main.94a8440f.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tweet-like/static/js/2.eb7e1061.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e88dfe7ea30b4ee34104",
-    "url": "/tweet-like/static/js/main.7e0f6938.chunk.js"
+    "revision": "52df975f3380b288ad8b",
+    "url": "/tweet-like/static/js/main.1ac46f7f.chunk.js"
   },
   {
     "revision": "5c55b99673b0971f4360",
