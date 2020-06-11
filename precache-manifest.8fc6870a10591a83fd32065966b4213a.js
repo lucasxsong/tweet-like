@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2746286e0d28448bb002f4a698cfa939",
+    "revision": "f1dd0d372acd899b3df513e1f2489c81",
     "url": "/tweet-like/index.html"
   },
   {
-    "revision": "55b331d334a6c221cfac",
-    "url": "/tweet-like/static/css/2.91405f8f.chunk.css"
+    "revision": "149f73c7fbd4726a023a",
+    "url": "/tweet-like/static/css/2.593b2962.chunk.css"
   },
   {
-    "revision": "52df975f3380b288ad8b",
+    "revision": "6f7455f6076082cc8871",
     "url": "/tweet-like/static/css/main.94a8440f.chunk.css"
   },
   {
-    "revision": "55b331d334a6c221cfac",
-    "url": "/tweet-like/static/js/2.eb7e1061.chunk.js"
+    "revision": "149f73c7fbd4726a023a",
+    "url": "/tweet-like/static/js/2.bfa934ee.chunk.js"
   },
   {
-    "revision": "4d47ffde3dc69784e8e23fd910817ef8",
-    "url": "/tweet-like/static/js/2.eb7e1061.chunk.js.LICENSE.txt"
+    "revision": "ab61fff13ab393bdf16d7a33f6d8df0a",
+    "url": "/tweet-like/static/js/2.bfa934ee.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "52df975f3380b288ad8b",
-    "url": "/tweet-like/static/js/main.1ac46f7f.chunk.js"
+    "revision": "6f7455f6076082cc8871",
+    "url": "/tweet-like/static/js/main.ac8e0d89.chunk.js"
   },
   {
     "revision": "5c55b99673b0971f4360",
