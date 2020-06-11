@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/tweetlike/static/css/main.94a8440f.chunk.css",
-    "main.js": "/tweetlike/static/js/main.3e11cec7.chunk.js",
-    "main.js.map": "/tweetlike/static/js/main.3e11cec7.chunk.js.map",
-    "runtime-main.js": "/tweetlike/static/js/runtime-main.f88e21d3.js",
-    "runtime-main.js.map": "/tweetlike/static/js/runtime-main.f88e21d3.js.map",
-    "static/css/2.f18acbd5.chunk.css": "/tweetlike/static/css/2.f18acbd5.chunk.css",
-    "static/js/2.eb7e1061.chunk.js": "/tweetlike/static/js/2.eb7e1061.chunk.js",
-    "static/js/2.eb7e1061.chunk.js.map": "/tweetlike/static/js/2.eb7e1061.chunk.js.map",
-    "index.html": "/tweetlike/index.html",
-    "precache-manifest.640d28e7f67c30601c91b32ab1cc5051.js": "/tweetlike/precache-manifest.640d28e7f67c30601c91b32ab1cc5051.js",
-    "service-worker.js": "/tweetlike/service-worker.js",
-    "static/css/2.f18acbd5.chunk.css.map": "/tweetlike/static/css/2.f18acbd5.chunk.css.map",
-    "static/css/main.94a8440f.chunk.css.map": "/tweetlike/static/css/main.94a8440f.chunk.css.map",
-    "static/js/2.eb7e1061.chunk.js.LICENSE.txt": "/tweetlike/static/js/2.eb7e1061.chunk.js.LICENSE.txt",
-    "static/media/semantic.min.css": "/tweetlike/static/media/outline-icons.ef60a4f6.woff"
+    "main.css": "/tl-app/static/css/main.94a8440f.chunk.css",
+    "main.js": "/tl-app/static/js/main.7186bf90.chunk.js",
+    "main.js.map": "/tl-app/static/js/main.7186bf90.chunk.js.map",
+    "runtime-main.js": "/tl-app/static/js/runtime-main.3e04f85f.js",
+    "runtime-main.js.map": "/tl-app/static/js/runtime-main.3e04f85f.js.map",
+    "static/css/2.e094845a.chunk.css": "/tl-app/static/css/2.e094845a.chunk.css",
+    "static/js/2.eb7e1061.chunk.js": "/tl-app/static/js/2.eb7e1061.chunk.js",
+    "static/js/2.eb7e1061.chunk.js.map": "/tl-app/static/js/2.eb7e1061.chunk.js.map",
+    "index.html": "/tl-app/index.html",
+    "precache-manifest.31628273d92e3de838e8a2c8268af408.js": "/tl-app/precache-manifest.31628273d92e3de838e8a2c8268af408.js",
+    "service-worker.js": "/tl-app/service-worker.js",
+    "static/css/2.e094845a.chunk.css.map": "/tl-app/static/css/2.e094845a.chunk.css.map",
+    "static/css/main.94a8440f.chunk.css.map": "/tl-app/static/css/main.94a8440f.chunk.css.map",
+    "static/js/2.eb7e1061.chunk.js.LICENSE.txt": "/tl-app/static/js/2.eb7e1061.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/tl-app/static/media/outline-icons.ef60a4f6.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.f88e21d3.js",
-    "static/css/2.f18acbd5.chunk.css",
+    "static/js/runtime-main.3e04f85f.js",
+    "static/css/2.e094845a.chunk.css",
     "static/js/2.eb7e1061.chunk.js",
     "static/css/main.94a8440f.chunk.css",
-    "static/js/main.3e11cec7.chunk.js"
+    "static/js/main.7186bf90.chunk.js"
   ]
 }
