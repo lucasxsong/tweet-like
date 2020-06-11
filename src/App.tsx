@@ -34,7 +34,6 @@ class App extends React.Component<Props, State> {
 	};
 
 	showTweets = (e: any) => {
-		console.log(e);
 		const fullcity = this.state.city.split(', ');
 		const cityfile = fullcity[0].toLowerCase().replace(/ /g, '');
 		this.setState({ cityfile: cityfile });

@@ -116,7 +116,8 @@ class Tweeta extends React.Component<Props, State> {
 			let t = this.wordgen(140, this.props.tbigrams);
 			tweets.push(t);
 		}
-		let bio = this.wordgen(280, this.props.bbigrams);
+        let bio = this.wordgen(280, this.props.bbigrams);
+        console.log(tweets)
 
 		if (tweets[0].length > 1) {
 			return (
