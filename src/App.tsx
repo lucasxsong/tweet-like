@@ -9,7 +9,9 @@ interface Props {}
 interface State {
 	city: string;
 	showTweets: boolean;
-	cityfile: string;
+    cityfile: string;
+    tbigrams: any;
+    bbigrams: any;
 }
 
 class App extends React.Component<Props, State> {
@@ -20,8 +22,11 @@ class App extends React.Component<Props, State> {
 			showTweets: false,
 			// showTweets: false,
 			// cityfile:"",
-			cityfile: '',
-		};
+            cityfile: '',
+            tbigrams: null,
+            bbigrams: null,
+        };
+        this.showTweets = this.showTweets.bind(this)
 	}
 
 	handleSelection = (city: string) => {
@@ -33,7 +38,20 @@ class App extends React.Component<Props, State> {
 		const fullcity = this.state.city.split(', ');
 		const cityfile = fullcity[0].toLowerCase().replace(/ /g, '');
 		this.setState({ cityfile: cityfile });
-		if (cityfile !== '') this.setState({ showTweets: true });
+        if (cityfile !== '') this.setState({ showTweets: true });
+        const filename = 'data/ngramsbycity/' + cityfile + '.json';
+		const filename2 = 'data/biosbycity/' + cityfile + '.json';
+		fetch(filename)
+			.then((r: any) => r.json())
+			.then((text: any) => {
+				this.setState({ tbigrams: text });
+			});
+
+		fetch(filename2)
+			.then((r: any) => r.json())
+			.then((text: any) => {
+				this.setState({ bbigrams: text });
+			});
 	};
 
 	handleExit = () => {
@@ -69,7 +87,7 @@ class App extends React.Component<Props, State> {
 									<Icon name="paper plane outline" size="big" />
 								</Button.Content>
 								<Button.Content hidden>
-                                    go!
+									<Icon name="arrow right" size="big" />
 								</Button.Content>
 							</Button>
 						</div>
@@ -81,6 +99,8 @@ class App extends React.Component<Props, State> {
 				<>
 					{/* <div className="App">Tweeta</div> */}
 					<Tweeta
+                        bbigrams={this.state.bbigrams}
+                        tbigrams={this.state.tbigrams}
 						cityname={this.state.city}
 						city={this.state.cityfile}
 						handleExit={this.handleExit}

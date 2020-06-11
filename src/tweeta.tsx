@@ -8,6 +8,8 @@ interface Props {
 	city: string;
 	cityname: string;
 	handleExit: any;
+	bbigrams: any;
+	tbigrams: any;
 }
 interface State {
 	tbigrams: any;
@@ -26,7 +28,7 @@ class Tweeta extends React.Component<Props, State> {
 			tweets: [],
 			bio: '',
 		};
-		this.componentDidMount = this.componentDidMount.bind(this);
+		// this.componentDidMount = this.componentDidMount.bind(this);
 	}
 
 	// helper function that returns random element given array
@@ -88,36 +90,35 @@ class Tweeta extends React.Component<Props, State> {
 		}
 	}
 
-	componentDidMount() {
-		const filename = 'data/ngramsbycity/' + this.props.city + '.json';
-		const filename2 = 'data/biosbycity/' + this.props.city + '.json';
-		fetch(filename)
-			.then((r: any) => r.json())
-			.then((text: any) => {
-				this.setState({ tbigrams: text });
-			});
+	// componentDidMount() {
+	// 	const filename = 'data/ngramsbycity/' + this.props.city + '.json';
+	// 	const filename2 = 'data/biosbycity/' + this.props.city + '.json';
+	// 	fetch(filename)
+	// 		.then((r: any) => r.json())
+	// 		.then((text: any) => {
+	// 			this.setState({ tbigrams: text });
+	// 		});
 
-		fetch(filename2)
-			.then((r: any) => r.json())
-			.then((text: any) => {
-				this.setState({ bbigrams: text });
-			});
+	// 	fetch(filename2)
+	// 		.then((r: any) => r.json())
+	// 		.then((text: any) => {
+	// 			this.setState({ bbigrams: text });
+	// 		});
 
-		this.setState({ isLoaded: true });
-	}
+	// 	this.setState({ isLoaded: true });
+	// }
 
 	render() {
 		// const { bio, tweets } = this.state;
+		let tweets: string[] = [];
 
-		if (this.state.isLoaded) {
-			let tweets: string[] = [];
+		for (let i: number = 0; i < 10; i++) {
+			let t = this.wordgen(140, this.props.tbigrams);
+			tweets.push(t);
+		}
+		let bio = this.wordgen(280, this.props.bbigrams);
 
-			for (let i: number = 0; i < 10; i++) {
-				let t = this.wordgen(140, this.state.tbigrams);
-				tweets.push(t);
-			}
-			let bio = this.wordgen(280, this.state.bbigrams);
-
+		if (tweets[0].length > 1) {
 			return (
 				<div className="App">
 					<div className="search-container results">
@@ -126,7 +127,7 @@ class Tweeta extends React.Component<Props, State> {
 								<Icon name="twitter" size="big" className="twit" />
 								tweetlike
 							</div>
-                            <div className="bio">{bio}</div>
+							<div className="bio">{bio}</div>
 							<Feed
 								style={{
 									margin: '10px',
