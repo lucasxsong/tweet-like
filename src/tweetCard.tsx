@@ -4,7 +4,8 @@ import { Feed } from 'semantic-ui-react';
 interface Props {
 	text: string;
 	username: string;
-	location: string;
+    location: string;
+    id: any;
 }
 
 interface State {}
@@ -21,7 +22,7 @@ class TweetCard extends Component<Props, State> {
 		let date:String = mm + '/' + dd + '/' + yyyy;
         const url = 'https://twitter.com/' + this.props.username;
 		return (
-			<Feed.Event>
+			<Feed.Event id = {this.props.id}>
 				<Feed.Content>
 					<Feed.Summary
 						className="results-text"

@@ -3,6 +3,7 @@ import './App.css';
 import { Placeholder, Icon, Button, Feed } from 'semantic-ui-react';
 import TweetCard from './tweetCard';
 import { TransitionGroup, CSSTransition } from 'react-transition-group'; // ES6
+import _ from "lodash-es";
 
 interface Props {
 	city: string;
@@ -90,24 +91,6 @@ class Tweeta extends React.Component<Props, State> {
 		}
 	}
 
-	// componentDidMount() {
-	// 	const filename = 'data/ngramsbycity/' + this.props.city + '.json';
-	// 	const filename2 = 'data/biosbycity/' + this.props.city + '.json';
-	// 	fetch(filename)
-	// 		.then((r: any) => r.json())
-	// 		.then((text: any) => {
-	// 			this.setState({ tbigrams: text });
-	// 		});
-
-	// 	fetch(filename2)
-	// 		.then((r: any) => r.json())
-	// 		.then((text: any) => {
-	// 			this.setState({ bbigrams: text });
-	// 		});
-
-	// 	this.setState({ isLoaded: true });
-	// }
-
 	render() {
 		// const { bio, tweets } = this.state;
 		let tweets: string[] = [];
@@ -117,9 +100,8 @@ class Tweeta extends React.Component<Props, State> {
 			tweets.push(t);
 		}
         let bio = this.wordgen(280, this.props.bbigrams);
-        console.log(tweets)
 
-		if (tweets[0].length > 1) {
+		if (tweets[0].length > 0) {
 			return (
 				<div className="App">
 					<div className="search-container results">
@@ -138,23 +120,18 @@ class Tweeta extends React.Component<Props, State> {
 									borderRadius: '5px',
 								}}
 							>
-								{/* <TransitionGroup> */}
-								{tweets.map((e) => {
+								{_.map(tweets, (val: any, key: any) => {
 									return (
-										// <CSSTransition
-										// 	id={id}
-										// 	timeout={200}
-										// 	classNames="tweet"
-										// >
+                                        <>
 										<TweetCard
+                                            id={key}
 											username="tweetlike"
-											text={e}
+											text={val}
 											location={this.props.cityname}
 										/>
-										// </CSSTransition>
+                                        </>
 									);
 								})}
-								{/* </TransitionGroup> */}
 							</Feed>
 							<Button onClick={this.props.handleExit} icon="redo" />
 						</div>
